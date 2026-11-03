@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>可口可樂自販機個案</title>
+<meta name="description" content="清大科管所服務行銷期末個案提案：Coca-Cola 日本自販機與 Coke ON">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+/* Layout: 沿用期中提案頁的單欄長頁，改成可口可樂紅與機台鋼灰 */
+:root{--bg:#F8F6F5;--bg2:#FFFFFF;--ink:#2A2022;--muted:#6B5E60;--line:#EADFDF;--red:#C4161C;--soft:#E3B4B4;--tint:#FBEDED;--steel:#6A8299;--amber:#A8650F;--axis:#BDB2B3;--strong:#8F1015;
+--display:"Noto Serif TC",serif;--body:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1B1617;--bg2:#262021;--ink:#F3ECEC;--muted:#BBAEAF;--line:#3F3536;--red:#E4575B;--soft:#7A4043;--tint:#3A2426;--steel:#7A93A8;--amber:#E2AC55;--axis:#5C5052;--strong:#F7A5A6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1B1617;--bg2:#262021;--ink:#F3ECEC;--muted:#BBAEAF;--line:#3F3536;--red:#E4575B;--soft:#7A4043;--tint:#3A2426;--steel:#7A93A8;--amber:#E2AC55;--axis:#5C5052;--strong:#F7A5A6;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.75;font-size:16px}
+.hero{background:linear-gradient(180deg,var(--tint) 0%,var(--bg) 100%);border-bottom:1px solid var(--line)}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.hero .wrap{padding-block:60px 36px}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;color:var(--red);background:var(--bg2);border:1px solid var(--soft);border-radius:999px;padding:4px 12px;margin-bottom:16px}
+h1{font-family:var(--display);font-size:clamp(26px,4.6vw,40px);line-height:1.3;margin:0 0 12px;text-wrap:balance}
+.meta{color:var(--muted);font-size:14px;margin:0}
+nav.toc{display:flex;flex-wrap:wrap;gap:8px;padding-block:16px}
+nav.toc a{font-size:13px;color:var(--red);text-decoration:none;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+nav.toc a:hover,nav.toc a:focus-visible{border-color:var(--red)}
+main{padding-block:8px 72px}
+h2{font-family:var(--display);font-size:clamp(20px,3vw,26px);line-height:1.4;margin:52px 0 14px;padding-top:12px;border-top:1px solid var(--line);scroll-margin-top:16px;text-wrap:balance}
+h2::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--red);margin-right:10px;vertical-align:middle;transform:translateY(-2px)}
+p{margin:12px 0}strong{color:var(--strong)}a{color:var(--red)}ul,ol{padding-left:22px}li{margin:4px 0}
+.lead{font-size:17px}
+figure{margin:22px 0}figcaption{font-size:12.5px;color:var(--muted);text-align:right;margin-top:6px}
+.viz{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 12px 10px}
+.scroll{overflow-x:auto}.scroll svg{display:block;width:100%;height:auto}
+.scroll.bp svg{min-width:690px}.scroll.chart svg{min-width:520px}
+.story{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0}
+.panel{background:var(--bg2);border:1px solid var(--soft);border-radius:10px;padding:10px 12px 12px;min-width:0}
+.panel svg{display:block;width:100%;height:auto;font-family:inherit}
+.panel-t{margin:6px 0 0;font-weight:700;display:flex;align-items:center;gap:8px}
+.panel-t b{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:var(--bg2);font-size:12px;flex:none}
+.panel-d{margin:4px 0 0;font-size:13.5px;line-height:1.55;color:var(--muted)}
+.chain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin:0;list-style:none;padding:0}
+.chain li{position:relative;margin:0;min-width:0}
+.chain li+li::before{content:"→";position:absolute;left:-18px;top:13px;color:var(--axis);font-weight:700}
+.node{display:block;text-align:center;font-weight:700;padding:12px 6px;border-radius:8px;background:var(--tint);border:1.5px solid var(--red)}
+.chain li.warn .node{background:transparent;border:1.5px dashed var(--amber)}
+.ev{font-size:13.5px;line-height:1.55;margin:8px 2px 0;text-align:center}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--muted);margin:14px 2px 2px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:14px;border-radius:3px;background:var(--tint);border:1.5px solid var(--red)}
+.legend i.w{background:transparent;border:1.5px dashed var(--amber)}
+.table-wrap{overflow-x:auto;margin:16px 0}
+table{width:100%;min-width:520px;border-collapse:separate;border-spacing:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;font-size:15px}
+th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--tint);color:var(--strong);font-weight:700}th:first-child{border-top-left-radius:11px}th:last-child{border-top-right-radius:11px}
+tr:last-child td{border-bottom:0}td.nw,th.nw{white-space:nowrap}
+.timebar{display:flex;gap:2px;border-radius:8px;overflow:hidden;margin:16px 0 4px}
+.timebar div{min-width:0;padding:8px 4px;background:var(--tint);text-align:center;font-size:13px;line-height:1.35}
+.timebar div:nth-child(even){background:var(--line)}.timebar b{display:block;font-size:15px}
+.hint{font-size:13.5px;color:var(--muted)}
+.check{list-style:none;padding:0}.check li{padding-left:26px;position:relative}
+.check li::before{content:"";position:absolute;left:2px;top:7px;width:13px;height:13px;border:1.5px solid var(--steel);border-radius:3px}
+.src li{font-size:14.5px}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-block:22px 44px}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+@media (max-width:640px){body{font-size:15px}.hero .wrap{padding-block:42px 26px}.story{grid-template-columns:repeat(2,minmax(0,1fr))}.chain{grid-template-columns:repeat(2,minmax(0,1fr))}.chain li:nth-child(3)::before{display:none}th,td{padding:8px 10px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.bonds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0;list-style:none;padding:0}
+.bonds li{margin:0;min-width:0}.bonds li.warn .node{background:transparent;border:1.5px dashed var(--amber)}
+.bonds .ev{text-align:left}.bonds .ev b{display:block;color:var(--muted);font-weight:500;font-size:12.5px}
+.cap{font-size:12.5px;color:var(--muted);text-align:right;margin:-14px 0 16px}
+@media (max-width:640px){.bonds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<span class="eyebrow">清大科管所｜服務行銷 期末個案</span>
+<h1>服務行銷個案提案：<span style="white-space:nowrap">Coca-Cola</span> 的 Coke ON 與無人服務</h1>
+<p class="meta">更新日期：2026-11-03</p>
+</div></header>
+<div class="wrap"><nav class="toc" id="toc" aria-label="目錄"></nav>
+<main>
+
+<h2 id="story">個案故事：沒有店員，要怎麼留住顧客？</h2>
+<p class="lead">在日本，可口可樂體系經營約 65 萬台自販機，自己就是店家。店裡沒有店員，機器和 App 要包辦招呼、結帳、會員經營，連災難時的關懷都由機器完成</p>
+<figure><div class="story"><article class="panel"><svg viewBox="0 0 240 136" role="img" aria-label="谷底：全日本飲料自販機 247 萬 → 195 萬台，光「就在旁邊」不夠了"><line x1="8" x2="232" y1="128" y2="128" stroke="var(--soft)" stroke-width="1.4"/><g opacity="1"><rect x="16" y="52" width="46" height="76" rx="4" fill="var(--red)" fill-opacity=".14" stroke="var(--red)" stroke-width="1.6"/><rect x="23" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="34" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="45" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="23" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="34" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="45" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="23" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="34" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="45" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="23" y="109" width="32" height="11" rx="2" fill="var(--steel)" fill-opacity=".45"/></g><g opacity="0.4"><rect x="68" y="52" width="46" height="76" rx="4" fill="var(--red)" fill-opacity=".14" stroke="var(--red)" stroke-width="1.6"/><rect x="75" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="86" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="97" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="75" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="86" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="97" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="75" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="86" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="97" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="75" y="109" width="32" height="11" rx="2" fill="var(--steel)" fill-opacity=".45"/></g><polyline points="126,42 144,56 156,52 176,84" fill="none" stroke="var(--amber)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="192" y="40" fill="var(--amber)" font-size="13" font-weight="700" text-anchor="middle">-21%</text><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="190" cy="70" r="9"/><path d="M190 79V106M181 128L190 106L199 128"/><path d="M178 100L190 87L204 98"/></g></svg><p class="panel-t"><b>1</b>谷底</p><p class="panel-d">全日本飲料自販機 247 萬 → 195 萬台，光「就在旁邊」不夠了</p></article><article class="panel"><svg viewBox="0 0 240 136" role="img" aria-label="上 App：2016 年 Coke ON：手機連機台，集 15 章換 1 瓶"><line x1="8" x2="232" y1="128" y2="128" stroke="var(--soft)" stroke-width="1.4"/><g opacity="1"><rect x="30" y="52" width="46" height="76" rx="4" fill="var(--red)" fill-opacity=".14" stroke="var(--red)" stroke-width="1.6"/><rect x="37" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="48" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="59" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="37" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="48" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="59" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="37" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="48" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="59" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="37" y="109" width="32" height="11" rx="2" fill="var(--steel)" fill-opacity=".45"/></g><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="120" cy="70" r="9"/><path d="M120 79V106M111 128L120 106L129 128"/><path d="M108 103L120 87L140 80"/></g><rect x="136" y="72" width="11" height="19" rx="2" fill="var(--red)"/><circle cx="162" cy="62" r="6.5" fill="var(--red)" fill-opacity="0.85" stroke="var(--red)"/><circle cx="179" cy="62" r="6.5" fill="var(--red)" fill-opacity="0.85" stroke="var(--red)"/><circle cx="196" cy="62" r="6.5" fill="var(--red)" fill-opacity="0.85" stroke="var(--red)"/><circle cx="162" cy="79" r="6.5" fill="var(--red)" fill-opacity="0.85" stroke="var(--red)"/><circle cx="179" cy="79" r="6.5" fill="var(--red)" fill-opacity="0.15" stroke="var(--red)"/><circle cx="196" cy="79" r="6.5" fill="var(--red)" fill-opacity="0.15" stroke="var(--red)"/></svg><p class="panel-t"><b>2</b>上 App</p><p class="panel-d">2016 年 Coke ON：手機連機台，集 15 章換 1 瓶</p></article><article class="panel"><svg viewBox="0 0 240 136" role="img" aria-label="玩起來：走路領章、組隊挑戰、地區限定章，不買也能開 App"><line x1="8" x2="232" y1="128" y2="128" stroke="var(--soft)" stroke-width="1.4"/><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="70" r="9"/><path d="M50 79V106M41 128L50 106L59 128"/><path d="M38 100L50 87L64 98"/></g><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="104" cy="70" r="9"/><path d="M104 79V106M95 128L104 106L113 128"/><path d="M92 100L104 87L118 98"/></g><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="158" cy="70" r="9"/><path d="M158 79V106M149 128L158 106L167 128"/><path d="M145 66L158 87L171 66"/></g><circle cx="200" cy="56" r="17" fill="var(--red)" fill-opacity=".14" stroke="var(--red)" stroke-width="1.6"/><text x="200" y="61" fill="var(--red)" font-size="13" font-weight="700" text-anchor="middle">章</text></svg><p class="panel-t"><b>3</b>玩起來</p><p class="panel-d">走路領章、組隊挑戰、地區限定章，不買也能開 App</p></article><article class="panel"><svg viewBox="0 0 240 136" role="img" aria-label="有溫度：2007 年能登地震時遠端開櫃，2 台機器 6 天送出 2,347 瓶水"><line x1="8" x2="232" y1="128" y2="128" stroke="var(--soft)" stroke-width="1.4"/><g opacity="1"><rect x="22" y="52" width="46" height="76" rx="4" fill="var(--red)" fill-opacity=".14" stroke="var(--red)" stroke-width="1.6"/><rect x="29" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="40" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="51" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="29" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="40" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="51" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="29" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="40" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="51" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="29" y="109" width="32" height="11" rx="2" fill="var(--steel)" fill-opacity=".45"/></g><path d="M112 42q16-16 32 0M120 52q8-8 16 0" fill="none" stroke="var(--steel)" stroke-width="2" stroke-linecap="round"/><text x="128" y="74" fill="var(--red)" font-size="13" font-weight="700" text-anchor="middle">免費</text><rect x="92" y="104" width="12" height="24" rx="3" fill="var(--steel)" fill-opacity="1"/><rect x="108" y="104" width="12" height="24" rx="3" fill="var(--steel)" fill-opacity="0.7"/><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="182" cy="70" r="9"/><path d="M182 79V106M173 128L182 106L191 128"/><path d="M169 66L182 87L195 66"/></g></svg><p class="panel-t"><b>4</b>有溫度</p><p class="panel-d">2007 年能登地震時遠端開櫃，2 台機器 6 天送出 2,347 瓶水</p></article><article class="panel"><svg viewBox="0 0 240 136" role="img" aria-label="漲價：可樂 500ml 建議價升到 200 日圓，自販機減損 881 億"><line x1="8" x2="232" y1="128" y2="128" stroke="var(--soft)" stroke-width="1.4"/><g opacity="1"><rect x="34" y="52" width="46" height="76" rx="4" fill="var(--red)" fill-opacity=".14" stroke="var(--red)" stroke-width="1.6"/><rect x="41" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="52" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="63" y="60" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="41" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="52" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="63" y="74" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="41" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="52" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="63" y="88" width="8" height="10" rx="1.5" fill="var(--red)" fill-opacity=".55"/><rect x="41" y="109" width="32" height="11" rx="2" fill="var(--steel)" fill-opacity=".45"/></g><path d="M50 52L60 80L48 96L60 128" fill="none" stroke="var(--bg2)" stroke-width="3"/><rect x="108" y="30" width="104" height="30" rx="5" fill="var(--amber)" fill-opacity=".16" stroke="var(--amber)" stroke-width="1.5"/><text x="160" y="50" fill="var(--amber)" font-size="12.5" font-weight="700" text-anchor="middle">¥180 → ¥200</text><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="158" cy="74" r="9"/><path d="M158 83V110M149 132L158 110L167 132"/><path d="M147 73L158 91L169 73"/></g></svg><p class="panel-t"><b>5</b>漲價</p><p class="panel-d">可樂 500ml 建議價升到 200 日圓，自販機減損 881 億</p></article><article class="panel"><svg viewBox="0 0 240 136" role="img" aria-label="爭議：App 下載 7,000 萬次，2025 年銷量仍 -5%"><line x1="8" x2="232" y1="128" y2="128" stroke="var(--soft)" stroke-width="1.4"/><rect x="28" y="30" width="46" height="88" rx="7" fill="var(--red)" fill-opacity=".1" stroke="var(--red)" stroke-width="1.6"/><text x="51" y="70" fill="var(--red)" font-size="11.5" font-weight="700" text-anchor="middle">7,000</text><text x="51" y="86" fill="var(--red)" font-size="11.5" font-weight="700" text-anchor="middle">萬</text><polyline points="92,52 114,72 126,68 148,108" fill="none" stroke="var(--amber)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="136" y="48" fill="var(--amber)" font-size="13" font-weight="700" text-anchor="middle">-5%</text><g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="190" cy="70" r="9"/><path d="M190 79V106M181 128L190 106L199 128"/><path d="M178 103L190 87L202 103"/></g><text x="162" y="70" fill="var(--muted)" font-size="20" font-weight="600" text-anchor="middle">?</text></svg><p class="panel-t"><b>6</b>爭議</p><p class="panel-d">App 下載 7,000 萬次，2025 年銷量仍 -5%</p></article></div><figcaption>個案 storyboard · 6 格</figcaption></figure>
+<p>本案核心問題意識：期中的星巴克把人味寫成 SOP，期末的可口可樂沒有人可以寫。<strong>少了店員，服務還能靠什麼留住顧客？Coke ON 留下的是顧客，還是下載數？</strong></p>
+
+<h2 id="what">The What: 服務行銷視角解構個案脈絡</h2>
+<figure class="viz"><p style="margin:2px 2px 14px;font-weight:700">Coke ON 用四種關係連結取代店員</p>
+<ol class="bonds"><li><span class="node">財務連結</span><p class="ev"><b>強</b>集 15 章換 1 瓶、月費 Pass、雙倍章</p></li><li><span class="node">結構連結</span><p class="ev"><b>強</b>Coke ON Pay 綁 10 種支付、53 萬台以上機台</p></li><li class=warn><span class="node">客製連結</span><p class="ev"><b>有做法，缺成效</b>依購買紀錄送試飲、熱區發券</p></li><li class=warn><span class="node">社交連結</span><p class="ev"><b>本案最弱，發揮空間最大</b>組隊挑戰、推薦好友、X 活動，少了店員互動</p></li></ol>
+<div class="legend"><span><i></i>有公開資料支持</span><span><i class="w"></i>我們要分析與提案的地方</span></div>
+</figure>
+<p class="cap">關係連結四層次，對照 Zeithaml《Services Marketing》</p>
+<p>財務連結最好複製，對手也能送點數。真正能拉開差距的是社交與客製連結，而這正是沒有店員時最難做的部分</p>
+
+<h2 id="how">The How: 服務設計對應的服務行銷概念</h2>
+<figure class="viz"><div class="scroll bp" tabindex="0" role="region" aria-label="服務藍圖"><svg viewBox="0 0 760 530" role="img" aria-label="雙迴圈服務藍圖：可見線上方是留客迴圈，下方是補貨迴圈，兩者只在機台交會" font-size="13"><defs><marker id="lr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--red)"/></marker><marker id="ls" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--steel)"/></marker></defs><text x="24" y="32" fill="var(--ink)" font-size="15" font-weight="700" text-anchor="start">雙迴圈服務藍圖：兩個循環只在機台交會</text><line x1="24" x2="736" y1="270" y2="270" stroke="var(--red)" stroke-width="1.25" stroke-dasharray="6 4"/><text x="736" y="260" fill="var(--muted)" font-size="11" font-weight="500" text-anchor="end">顧客看得到 ↑</text><text x="736" y="286" fill="var(--muted)" font-size="11" font-weight="500" text-anchor="end">顧客看不到 ↓</text><text x="380" y="160" fill="var(--red)" font-size="15" font-weight="700" text-anchor="middle">留客迴圈</text><text x="380" y="180" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">讓顧客回來</text><text x="380" y="366" fill="var(--steel)" font-size="15" font-weight="700" text-anchor="middle">補貨迴圈</text><text x="380" y="386" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">讓機台有對的飲料</text><path d="M227 195C260 205 290 222 326 238" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" marker-end="url(#lr)"/><path d="M434 238C470 222 500 205 533 195" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" marker-end="url(#lr)"/><path d="M630 158C620 110 560 92 479 90" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" marker-end="url(#lr)"/><path d="M281 90C200 92 140 110 130 158" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" marker-end="url(#lr)"/><path d="M326 302C290 318 260 335 227 345" fill="none" stroke="var(--steel)" stroke-width="2" stroke-linecap="round" marker-end="url(#ls)"/><path d="M130 382C140 430 200 448 281 450" fill="none" stroke="var(--steel)" stroke-width="2" stroke-linecap="round" marker-end="url(#ls)"/><path d="M479 450C560 448 620 430 630 382" fill="none" stroke="var(--steel)" stroke-width="2" stroke-linecap="round" marker-end="url(#ls)"/><path d="M533 345C500 335 470 318 434 302" fill="none" stroke="var(--steel)" stroke-width="2" stroke-linecap="round" marker-end="url(#ls)"/><rect x="35.0" y="161.0" width="190" height="58" rx="10" fill="var(--red)" fill-opacity=".12" stroke="var(--red)" stroke-width="1.6"/><text x="130" y="185.0" fill="var(--ink)" font-size="13.5" font-weight="700" text-anchor="middle">被 App 喚回</text><text x="130" y="204.0" fill="var(--muted)" font-size="11.5" font-weight="400" text-anchor="middle">走路章、活動、Coke ON Day</text><rect x="535.0" y="161.0" width="190" height="58" rx="10" fill="var(--red)" fill-opacity=".12" stroke="var(--red)" stroke-width="1.6"/><text x="630" y="185.0" fill="var(--ink)" font-size="13.5" font-weight="700" text-anchor="middle">集章</text><text x="630" y="204.0" fill="var(--muted)" font-size="11.5" font-weight="400" text-anchor="middle">每瓶 1 章，活動時雙倍</text><rect x="285.0" y="61.0" width="190" height="58" rx="10" fill="var(--red)" fill-opacity=".12" stroke="var(--red)" stroke-width="1.6"/><text x="380" y="85.0" fill="var(--ink)" font-size="13.5" font-weight="700" text-anchor="middle">換券與續用</text><text x="380" y="104.0" fill="var(--muted)" font-size="11.5" font-weight="400" text-anchor="middle">15 章換 1 瓶、月費 Pass</text><rect x="35.0" y="321.0" width="190" height="58" rx="10" fill="var(--steel)" fill-opacity=".12" stroke="var(--steel)" stroke-width="1.6"/><text x="130" y="345.0" fill="var(--ink)" font-size="13.5" font-weight="700" text-anchor="middle">銷售資料回傳</text><text x="130" y="364.0" fill="var(--muted)" font-size="11.5" font-weight="400" text-anchor="middle">機台連網回傳銷售資料</text><rect x="285.0" y="421.0" width="190" height="58" rx="10" fill="var(--steel)" fill-opacity=".12" stroke="var(--steel)" stroke-width="1.6"/><text x="380" y="445.0" fill="var(--ink)" font-size="13.5" font-weight="700" text-anchor="middle">AI 配貨</text><text x="380" y="464.0" fill="var(--muted)" font-size="11.5" font-weight="400" text-anchor="middle">逾 30 萬台依利潤選品</text><rect x="535.0" y="321.0" width="190" height="58" rx="10" fill="var(--steel)" fill-opacity=".12" stroke="var(--steel)" stroke-width="1.6"/><text x="630" y="345.0" fill="var(--ink)" font-size="13.5" font-weight="700" text-anchor="middle">路線人員補貨</text><text x="630" y="364.0" fill="var(--muted)" font-size="11.5" font-weight="400" text-anchor="middle">這張圖裡唯一的人</text><rect x="326" y="218" width="108" height="104" rx="10" fill="var(--bg2)" stroke="var(--ink)" stroke-width="2"/><rect x="342" y="230" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><rect x="362" y="230" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><rect x="382" y="230" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><rect x="402" y="230" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><rect x="342" y="250" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><rect x="362" y="250" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><rect x="382" y="250" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><rect x="402" y="250" width="15" height="14" rx="2" fill="var(--red)" fill-opacity=".6"/><text x="380" y="290" fill="var(--ink)" font-size="14" font-weight="700" text-anchor="middle">機台</text><text x="380" y="308" fill="var(--muted)" font-size="11.5" font-weight="400" text-anchor="middle">約 65 萬台</text><rect x="78" y="254" width="222" height="32" rx="16" fill="var(--bg2)" stroke="var(--soft)"/><text x="189" y="275" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">藍牙連線 · Coke ON Pay · 取飲</text><rect x="462" y="254" width="178" height="32" rx="16" fill="var(--bg2)" stroke="var(--amber)"/><text x="551" y="275" fill="var(--ink)" font-size="12" font-weight="500" text-anchor="middle">災害時遠端開櫃，免費供水</text><circle cx="276" cy="212" r="9" fill="var(--amber)"/><text x="276" y="216" fill="var(--bg2)" font-size="11" font-weight="700" text-anchor="middle">F</text><circle cx="592" cy="112" r="9" fill="var(--amber)"/><text x="592" y="116" fill="var(--bg2)" font-size="11" font-weight="700" text-anchor="middle">F</text><rect x="24" y="498" width="13" height="13" rx="3" fill="var(--red)" fill-opacity=".3" stroke="var(--red)"/><text x="43" y="509" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="start">日本可口可樂（App）</text><rect x="186" y="498" width="13" height="13" rx="3" fill="var(--steel)" fill-opacity=".3" stroke="var(--steel)"/><text x="205" y="509" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="start">裝瓶商（機台與補貨）</text><circle cx="362" cy="504" r="9" fill="var(--amber)"/><text x="362" y="508" fill="var(--bg2)" font-size="11" font-weight="700" text-anchor="middle">F</text><text x="376" y="509" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="start">服務失誤點：找不到或故障的機台；飲料券很快過期</text></svg></div></figure>
+<p class="cap">依公開資料整理的服務藍圖；失誤點待 App 評論分析確認</p>
+<p>傳統藍圖假設顧客走進店裡、店員在場，Coke ON 不是這樣運作，所以我們把它改畫成兩個循環。<strong>可見線以上是留客，以下是補貨，兩者只在機台交會</strong>，機台出問題，兩個循環會一起斷</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>傳統門市藍圖</th><th>Coke ON 雙迴圈</th></tr></thead><tbody>
+<tr><td class="nw">服務範圍</td><td>進店到離店</td><td>買之前、買之後都在服務，走路也算</td></tr>
+<tr><td class="nw">第一線</td><td>店員</td><td>機台與 App，人只出現在顧客看不到的地方</td></tr>
+<tr><td class="nw">補救</td><td>店員當場處理</td><td>沒有人在場，靠 App 客服與 AI agent</td></tr>
+<tr><td class="nw">經營者</td><td>一家公司</td><td>App 與機台分屬不同公司，留客和補貨各管一圈</td></tr>
+</tbody></table></div>
+<p><strong>服務行銷重點</strong></p>
+<div class="table-wrap"><table><thead><tr><th>層級</th><th>做了什麼</th><th>對應服務行銷概念</th></tr></thead><tbody>
+<tr><td class="nw">交會點</td><td>機器與 App 取代店員</td><td>自助服務科技（SST）、服務接觸</td></tr>
+<tr><td class="nw">顧客</td><td>顧客自己開 App、連線、走路集章</td><td>顧客共同生產</td></tr>
+<tr><td class="nw">留客迴圈</td><td>集章換券、月費 Pass、限定章</td><td>關係連結、遊戲化、服務定價</td></tr>
+<tr><td class="nw">補救</td><td>機台壞了沒人在場，App 客服導入 AI agent</td><td>服務失誤與補救</td></tr>
+<tr><td class="nw">補貨迴圈</td><td>AI 配貨、路線最佳化</td><td>產能與需求管理</td></tr>
+<tr><td class="nw">支援</td><td>App 歸日本可口可樂，機台歸裝瓶商</td><td>透過中間商交付服務</td></tr>
+<tr><td class="nw">實體證據</td><td>機台就是整間店；災害時轉為免費供水點</td><td>服務場景</td></tr>
+</tbody></table></div>
+<p>2018 年公司公開的調查顯示，顧客用自販機最大的理由是「就在旁邊」（36.1%），點數只有 3.5%。Coke ON 十年來想改變的正是這件事</p>
+
+<h2 id="result">The Result - 成效：App 長大了，利潤也回來了</h2>
+<figure class="viz"><div class="scroll chart" tabindex="0" role="region" aria-label="Coke ON 下載數圖"><svg viewBox="0 0 640 292" role="img" aria-label="Coke ON 累計下載從 920 萬成長到 7,500 萬次" font-size="13"><text x="16" y="26" fill="var(--ink)" font-size="16" font-weight="700" text-anchor="start">Coke ON 下載一路長到 7,500 萬次</text><text x="16" y="47" fill="var(--muted)" font-size="12.5" font-weight="400" text-anchor="start">累計下載數，萬次；活躍用戶未公開</text><line x1="64" x2="620" y1="250.0" y2="250.0" stroke="var(--axis)" stroke-opacity="1"/><text x="56" y="254.0" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="end">0</text><line x1="64" x2="620" y1="156.0" y2="156.0" stroke="var(--axis)" stroke-opacity="0.45"/><text x="56" y="160.0" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="end">4,000</text><line x1="64" x2="620" y1="62.0" y2="62.0" stroke="var(--axis)" stroke-opacity="0.45"/><text x="56" y="66.0" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="end">8,000</text><text x="64.0" y="272" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">2018</text><text x="185.33333333333331" y="272" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">2020</text><text x="306.66666666666663" y="272" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">2022</text><text x="428.0" y="272" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">2024</text><text x="549.3333333333333" y="272" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">2026</text><polyline fill="none" stroke="var(--red)" stroke-width="2" stroke-linejoin="round" points="88.3,228.4 250.9,191.2 289.1,179.5 395.2,139.6 489.9,109.0 549.3,85.5 584.5,73.8"/><g><title>2018/5：920 萬次</title><circle cx="88.3" cy="228.4" r="11" fill="transparent"/><circle cx="88.3" cy="228.4" r="4.5" fill="var(--red)" stroke="var(--bg2)" stroke-width="2"/></g><g><title>2021/1：2,500 萬次</title><circle cx="250.9" cy="191.2" r="11" fill="transparent"/><circle cx="250.9" cy="191.2" r="4.5" fill="var(--red)" stroke="var(--bg2)" stroke-width="2"/></g><g><title>2021/9：3,000 萬次</title><circle cx="289.1" cy="179.5" r="11" fill="transparent"/><circle cx="289.1" cy="179.5" r="4.5" fill="var(--red)" stroke="var(--bg2)" stroke-width="2"/></g><g><title>2023/6：4,700 萬次</title><circle cx="395.2" cy="139.6" r="11" fill="transparent"/><circle cx="395.2" cy="139.6" r="4.5" fill="var(--red)" stroke="var(--bg2)" stroke-width="2"/></g><g><title>2025/1：6,000 萬次</title><circle cx="489.9" cy="109.0" r="11" fill="transparent"/><circle cx="489.9" cy="109.0" r="4.5" fill="var(--red)" stroke="var(--bg2)" stroke-width="2"/></g><g><title>2025/12：7,000 萬次</title><circle cx="549.3" cy="85.5" r="11" fill="transparent"/><circle cx="549.3" cy="85.5" r="4.5" fill="var(--red)" stroke="var(--bg2)" stroke-width="2"/></g><g><title>2026/7：7,500 萬次</title><circle cx="584.5" cy="73.8" r="11" fill="transparent"/><circle cx="584.5" cy="73.8" r="4.5" fill="var(--red)" stroke="var(--bg2)" stroke-width="2"/></g><text x="88.26666666667218" y="216.38" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">920</text><text x="281.07333333333554" y="167.5" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="end">3,000</text><text x="481.8799999999989" y="97.0" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="end">6,000</text><text x="590.5199999999955" y="61.75" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="end">7,500</text></svg></div></figure>
+<p class="cap">日本可口可樂新聞稿與業界媒體；2026/7 為食品新聞報導</p>
+<ul>
+<li>App Store 評分 <strong>4.6</strong>、180 萬則評分，美食飲品類免費榜第 12（2026/11 查詢）</li>
+<li>對應機台從約 25 萬台（2018）增加到 53 萬台以上（2026）</li>
+<li>2018 年公司說，對應機台銷量比未對應機台高約 3%，我們沒有查到更新的數字</li>
+</ul>
+<figure class="viz"><div class="scroll chart" tabindex="0" role="region" aria-label="自販機事業各季利潤圖"><svg viewBox="0 0 640 332" role="img" aria-label="自販機事業各季利潤：上半年大幅改善，第三季與去年持平" font-size="13"><text x="16" y="26" fill="var(--ink)" font-size="16" font-weight="700" text-anchor="start">上半年利潤大增，第三季幾乎持平</text><text x="16" y="47" fill="var(--muted)" font-size="12.5" font-weight="400" text-anchor="start">CCBJH 自販機事業分部利潤，億日圓，同季比較</text><rect x="440" y="16" width="12" height="12" rx="3" fill="var(--steel)"/><text x="458" y="27" fill="var(--muted)" font-size="12.5" font-weight="500" text-anchor="start">2025</text><rect x="516" y="16" width="12" height="12" rx="3" fill="var(--red)"/><text x="534" y="27" fill="var(--muted)" font-size="12.5" font-weight="500" text-anchor="start">2026</text><line x1="40" x2="620" y1="209.2" y2="209.2" stroke="var(--axis)"/><g><title>Q1 1–3 月：2025 年 -29.6 億，2026 年 16.1 億</title><path d="M86 209.2V244.272q0 4 4 4H128q4 0 4-4V209.2z" fill="var(--steel)"/><path d="M134 209.2V191.948q0-4 4-4H176q4 0 4 4V209.2z" fill="var(--red)"/><text x="109.0" y="264.272" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">-30</text><text x="157.0" y="180.948" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">+16</text><text x="133" y="304" fill="var(--ink)" font-size="13" font-weight="600" text-anchor="middle">Q1</text><text x="133" y="322" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">1–3 月</text></g><g><title>Q2 4–6 月：2025 年 15.7 億，2026 年 37.3 億</title><path d="M262 209.2V192.476q0-4 4-4H304q4 0 4 4V209.2z" fill="var(--steel)"/><path d="M310 209.2V163.964q0-4 4-4H352q4 0 4 4V209.2z" fill="var(--red)"/><text x="285.0" y="181.476" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">+16</text><text x="333.0" y="152.964" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">+37</text><text x="309" y="304" fill="var(--ink)" font-size="13" font-weight="600" text-anchor="middle">Q2</text><text x="309" y="322" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">4–6 月</text></g><g><title>Q3 7–9 月：2025 年 97 億，2026 年 94.6 億</title><path d="M438 209.2V85.16q0-4 4-4H480q4 0 4 4V209.2z" fill="var(--steel)"/><path d="M486 209.2V88.328q0-4 4-4H528q4 0 4 4V209.2z" fill="var(--red)"/><text x="461.0" y="74.16" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">+97</text><text x="509.0" y="77.328" fill="var(--ink)" font-size="12.5" font-weight="700" text-anchor="middle">≈+95</text><text x="485" y="304" fill="var(--ink)" font-size="13" font-weight="600" text-anchor="middle">Q3</text><text x="485" y="322" fill="var(--muted)" font-size="12" font-weight="400" text-anchor="middle">7–9 月</text></g></svg></div></figure>
+<p class="cap">CCBJH 決算資料推算；2026 Q3 由累計 148 億扣除上半年，為約略值</p>
+<ul>
+<li>2026 年 1–9 月：自販機分部利潤 <strong>148 億日圓（+78.5%）</strong>，營收 -3.9%</li>
+<li>全體事業利益增加來源（公司拆解）：漲價 +121 億、自販機改革 +41 億、促銷費用 +17 億</li>
+<li>2025 年分部利潤增加 61 億，同期折舊減少 53 億，改善有很大一部分可能來自減損後的折舊下降</li>
+</ul>
+
+<h2 id="issue">The Issue - 顧客反應：App 留得住人嗎？</h2>
+<p>星巴克的衝突在工會，這裡沒有人上街。顧客不會抗議，只會少買一瓶。公司的說法和顧客端的訊號如下</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>公司說法</th><th>顧客端訊號</th></tr></thead><tbody>
+<tr><td class="nw">App</td><td>Coke ON 活動有帶動需求</td><td>同一段年報接著寫：市場萎縮加漲價，銷量 -5%；活躍人數未公開</td></tr>
+<tr><td class="nw">價格</td><td>漲價後銷量衝擊在預期內，獲利優先</td><td>東京 30 多歲女性：同樣的飲料，自販機最貴</td></tr>
+<tr><td class="nw">便利</td><td>機台是全年無休的消費者接觸點</td><td>價格相同時，50.3% 選自販機、49.7% 選超商；價格一拉開就難說</td></tr>
+<tr><td class="nw">習慣</td><td>月費 Pass 最多每天 2 瓶</td><td>東京 20 多歲女性：改帶水壺上班，原本每天約花 500 日圓</td></tr>
+<tr><td class="nw">補救</td><td>客服導入 AI agent</td><td>2020 年 App 評論：機器不能用，有 App 又如何</td></tr>
+</tbody></table></div>
+<p>同時對手正在撤退：ダイドー宣布移除 2 萬台，ポッカサッポロ出售自販機事業。CCBJH 副社長稱這是「最大的機會」</p>
+<p><strong>時間線</strong>：2016/4 Coke ON 上線 → 2018 走路集章 → 2021/4 月費訂閱 → 2025/8 公布 881 億減損 → 2025/10 可樂建議價 200 日圓 → 2026/3 十週年活動 → 2026/9 再漲 3.2–18.7% → 自販機營收仍在下滑！</p>
+
+<h2 id="proposal">Our Proposal - 我們的建議（初稿）</h2>
+<p>這段讓報告從描述變成判斷，也是本案最能發揮的地方。以下是討論起點，組內可以改寫</p>
+<div class="table-wrap"><table style="min-width:640px"><thead><tr><th>補哪裡</th><th>建議</th><th>怎麼衡量</th></tr></thead><tbody>
+<tr><td class="nw">客製連結</td><td>不對全體漲價，改用 App 專屬折扣調節離峰與滯銷機台。1999 年的熱天漲價敗在「加價」，同樣的邏輯做成「折扣」感受不同</td><td>單台銷量、離峰銷量</td></tr>
+<tr><td class="nw">社交連結</td><td>把「守護地方的機台」放進 App：標示附近災害對應機，地區限定章連結在地，讓機器有故事</td><td>活躍率、地區章完成率</td></tr>
+<tr><td class="nw">服務補救</td><td>機台異常一鍵回報，系統自動補發飲料券，由 App 補上不在場的店員</td><td>回報後回購率、評論負評比例</td></tr>
+</tbody></table></div>
+
+<h2 id="why">The Why: 為啥這提案值得分析？</h2>
+<div class="table-wrap"><table><thead><tr><th>面向</th><th>原因</th></tr></thead><tbody>
+<tr><td class="nw">深度</td><td>有十年數據，財報、官方新聞稿、顧客評論都查得到</td></tr>
+<tr><td class="nw">廣度</td><td>此案串起至少 9 個服務行銷概念</td></tr>
+<tr><td class="nw">延展性</td><td>App 剛滿十週年，10/30 剛公布第三季，9 月才再漲價</td></tr>
+<tr><td class="nw">適配度</td><td>和期中形成對照：有人的服務 vs. 無人的服務</td></tr>
+<tr><td class="nw">可發揮</td><td>畫面有趣、顧客評論可自己分析、結尾能提建議</td></tr>
+</tbody></table></div>
+<p><strong>為什麼選這個切角</strong>：可口可樂本身賣商品，要談服務得找到它直接面對顧客的地方</p>
+<div class="table-wrap"><table><thead><tr><th>切角</th><th>優點</th><th>問題</th></tr></thead><tbody>
+<tr><td><strong>Coke ON＋日本自販機（採用）</strong></td><td>公司直接當店家，有矛盾、有顧客聲音</td><td>範圍限日本，主角含裝瓶商</td></tr>
+<tr><td>美國 Freestyle 飲料機</td><td>自助客製，新品開發 90 天 vs. 約 18 個月</td><td>查到的公開成效數字少</td></tr>
+<tr><td>AI 聖誕廣告爭議</td><td>話題性高、討論容易</td><td>屬廣告溝通，服務交付成分低</td></tr>
+</tbody></table></div>
+
+<h2 id="prior">既有分析：我們的差異在哪？</h2>
+<p><strong>結論</strong>：我們沒有查到用服務行銷框架分析 Coke ON 的教學個案。多數分析集中在財務與 App 行銷技巧，這點報告前可再向老師確認</p>
+<p><strong>經典前傳</strong>：HBS〈Coca-Cola's New Vending Machine (A): Pricing to Capture Value, or Not?〉（King &amp; Narayandas，2000，9 頁，500-068）。1999 年執行長 Ivester 談到天氣熱就自動漲價的自販機，全球輿論立刻反彈，而他說這台機器在日本測試過</p>
+<div class="table-wrap"><table><thead><tr><th></th><th>HBS 個案</th><th>我們的提案</th></tr></thead><tbody>
+<tr><td class="nw">學科</td><td>行銷、定價、品牌管理</td><td>服務行銷</td></tr>
+<tr><td class="nw">時間</td><td>1999 年</td><td>2016 至 2026 年 Q3</td></tr>
+<tr><td class="nw">核心問題</td><td>機器能不能依需求定價？</td><td>少了店員，服務靠什麼留住顧客？</td></tr>
+<tr><td class="nw">顧客</td><td>對定價公平的反彈</td><td>從「就在旁邊」到被 App 綁定</td></tr>
+</tbody></table></div>
+<p><strong>其他分析</strong>：東洋経済、マネーポスト、Forbes JAPAN 聚焦減損與產業衰退；Business Journal 評論走路集章；McKinsey 2021 年訪談談自販機現代化，都沒有套用服務行銷框架</p>
+<p><strong>理論錨點</strong>：關係連結、自助服務科技（Meuter et al., 2000）、服務利潤鏈（Heskett et al., 1994）</p>
+<p><strong>我們的定位</strong>：財經媒體問「自販機還賺不賺錢」，我們問「沒有店員，顧客為什麼要回來」</p>
+
+<h2 id="team">報告架構與五人分工（14 分鐘＋1 分鐘緩衝）</h2>
+<div class="timebar" role="img" aria-label="報告時間分配：A 2 分、B 3 分、C 2.5 分、D 3 分、E 3.5 分">
+<div style="flex:2"><b>A</b>2'</div><div style="flex:3"><b>B</b>3'</div><div style="flex:2.5"><b>C</b>2'30"</div><div style="flex:3"><b>D</b>3'</div><div style="flex:3.5"><b>E</b>3'30"</div></div>
+<div class="table-wrap"><table style="min-width:680px"><thead><tr><th class="nw">組員</th><th class="nw">段落</th><th>這段要讓台下記住</th><th>要查、要做</th></tr></thead><tbody>
+<tr><td class="nw"><b>A</b> ＿＿＿</td><td class="nw">困境</td><td>自販機靠「就在旁邊」活了幾十年，現在不夠了</td><td>六格故事投影片；台數、銷量、減損原文；統一簡報版型</td></tr>
+<tr><td class="nw"><b>B</b> ＿＿＿</td><td class="nw">Coke ON 服務設計</td><td>沒有店員，四種連結怎麼補上</td><td>四種關係連結；走路、組隊、限定章的畫面；Pass 方案；與對手 App 比較</td></tr>
+<tr><td class="nw"><b>C</b> ＿＿＿</td><td class="nw">藍圖與補救</td><td>機器的服務和失誤都看得見</td><td>雙迴圈藍圖；失誤點；AI 配貨與客服；災害對應機故事</td></tr>
+<tr><td class="nw"><b>D</b> ＿＿＿</td><td class="nw">成效與翻轉</td><td>下載數上升，不代表顧客留下</td><td>決算總表；利潤拆解；<strong>App 評論分析</strong>（見下）；顧客聲音</td></tr>
+<tr><td class="nw"><b>E</b> ＿＿＿</td><td class="nw">建議與討論</td><td>如果我們是可口可樂，下一步怎麼做</td><td>三項建議定稿；1999 前傳；服務利潤鏈結論；帶討論；彩排計時</td></tr>
+</tbody></table></div>
+<p><strong>自製資料：App 評論分析</strong>。取最近 200 則 App Store 與 Google Play 日文評論，用 AI 翻譯後人工確認，分成集章、付款、機台故障、客服等類別，再標到雙迴圈藍圖的失誤點上。這是我們獨有的顧客資料，也補上官方沒公開的部分</p>
+<p class="hint">B 講留客迴圈，C 講補貨迴圈與交會點，用詞要先一起定稿。D 的評論分析會影響 E 的建議，D 要先交</p>
+<p><strong>討論題</strong></p>
+<ul>
+<li>顧客忠誠的對象是品牌、App，還是「剛好在旁邊」？</li>
+<li>同樣是看需求調價，App 折扣和熱天漲價，顧客為什麼感受不同？</li>
+<li>對手撤退時，你會多放機台，還是繼續只留賺錢的機台？</li>
+</ul>
+
+<h2 id="todo">報告前待確認</h2>
+<ul class="check">
+<li>範圍：先問老師，以日本 Coke ON 當可口可樂個案可不可以</li>
+<li>App 評論：目前只看到頁面上少數舊評論，藍圖失誤點要用最近評論重新確認</li>
+<li>兩個循環的資料：App 與機台資料有沒有打通，公開資料沒查到，是好問題也可能是建議方向</li>
+<li>活躍用戶與回購：官方未公開，簡報直接說明未揭露，並用 App 評論與排行補充</li>
+<li>2026 Q3 官方簡報原文：目前只看到媒體摘要，缺自販機銷量數字</li>
+<li>利潤拆解：「折舊 vs. 改革」是我們的推算，要用公司 bridge 圖驗證</li>
+<li>飲料機台數：飲料総研 195 萬、工業會 197 或 218 萬，統計口徑不同，投影片擇一並註明</li>
+<li>災害機資料：全國數字停在 2011 年的 5,561 台，找近年數字；北海道 2026 年逾 1,000 台可先用</li>
+<li>顧客說法：マネーポスト只有兩位受訪者，ナビット問卷樣本偏主婦，只能當訊號，不能代表全體</li>
+<li>2026/9 漲價幅度與 Pass 現價：目前是比價網站，找 CCBJH 新聞稿</li>
+<li>關係連結理論：對照上課用的教科書章節與用詞</li>
+</ul>
+
+<h2 id="sources">資料來源清單</h2>
+<p>以下皆為實際查證過的頁面。財報數字以公司決算文件為準，年報內容目前經第三方網站轉載，引用前請核對原文</p>
+<ul class="src"><li><a href="https://www.coca-cola.com/jp/ja/media-center/news-20260226-11">日本可口可樂：Coke ON 7,000 萬下載與 10 週年活動（2026/2/26）</a></li><li><a href="https://apps.apple.com/jp/app/coke-on-%E3%82%B3%E3%83%BC%E3%82%AF%E3%82%AA%E3%83%B3/id1088184021?l=en-US">App Store 日本區：Coke ON 評分與評論</a></li><li><a href="https://www.coca-cola.com/jp/ja/media-center/line-up-vm">日本可口可樂：自販機類型與災害支援機（資料多為 2010–2011 年）</a></li><li><a href="https://www.hokkaido-np.co.jp/article/1349496/">北海道新聞：災害對應自販機逾千台（2026/8/6，部分付費）</a></li><li><a href="https://www.moneypost.jp/1390251">マネーポスト：止不住的自販機離れ，含消費者說法（2026/4/19）</a></li><li><a href="https://zaikei.co.jp/releases/2856218/">ナビット：千人問卷新聞稿（2025/3/21，樣本偏主婦）</a></li><li><a href="https://biz-journal.jp/2022/01/post_271485.html">Business Journal：Coke ON 走路集章分析（2022/1/16）</a></li><li><a href="https://www.sec.gov/Archives/edgar/data/0000021344/000162828026067403/a2026q3earningsreleaseex-9.htm">The Coca-Cola Company Q3 2026 財報新聞稿（SEC 8-K，2026/10/27）</a></li><li><a href="https://www.ssnp.co.jp/beverage/709647/">食品産業新聞：CCBJH 2026 年 1–9 月決算（2026/11/1）</a></li><li><a href="https://shokuhin.net/155198/2026/08/15/inryou/inryou-inryou/">食品新聞：CCBJH 上半年決算，Coke ON 7,500 萬下載（2026/8/15）</a></li><li><a href="https://finance.biggo.jp/news/jpx_tdnet_140120260729502577">CCBJH 2026 中間期決算短信（TDnet 轉載）</a></li><li><a href="https://www.ccbj-holdings.com/pdf/news/1833.pdf">CCBJH 2026 第一季決算短信</a></li><li><a href="https://www.ccbj-holdings.com/ir/pdf/ja/annual/2026/2026_all.pdf">CCBJH 統合報告書 2026</a></li><li><a href="https://kitaishihon.com/company/2579/business">CCBJH 2025 年度有價證券報告書內容（第三方網站轉載）</a></li><li><a href="https://www.ccbj-holdings.com/pdf/irinfo/259_1.pdf">CCBJH 2025 Q3 決算說明會資料（2025/10/31）</a></li><li><a href="https://www2.jpx.co.jp/disc/25790/140120250213573488.pdf">CCBJH 2024 全年決算說明會資料（2025/2/13）</a></li><li><a href="https://forbesjapan.com/articles/detail/99741">Forbes JAPAN：CCBJH 副社長與自販機改革（2026/7/3）</a></li><li><a href="https://toyokeizai.net/articles/-/900281">東洋経済：自販機事業 881 億減損（2025/8/25，部分付費）</a></li><li><a href="https://toyokeizai.net/articles/-/886658?display=b">東洋経済：可樂 200 日圓時代（2025/6/25，部分付費）</a></li><li><a href="https://www.moneypost.jp/1317062">マネーポスト：自販機事業的困境（2025/9/16）</a></li><li><a href="https://gendai.media/articles/-/165335">現代ビジネス：自販機存在意義動搖（2026/3/26）</a></li><li><a href="https://www.mckinsey.com/featured-insights/asia-pacific/did-online-delivery-kill-the-vending-machine">McKinsey：Coca-Cola Bottlers Japan 訪談（2021/1/22）</a></li><li><a href="https://paymentnavi.com/paymentnews/155390.html">ペイメントナビ：Coke ON 6,000 萬下載（2025/1/7）</a></li><li><a href="https://www.advertimes.com/?p=427729">AdverTimes：Coke ON 經營重點，47 萬台對應（2023/7/20）</a></li><li><a href="https://www.advertimes.com/?p=363119">AdverTimes：Coke ON 3,000 萬下載（2021/9/15）</a></li><li><a href="https://www.coca-cola.com/jp/ja/media-center/news-20210203-11">日本可口可樂：Coke ON 2,500 萬下載（2021/2/3）</a></li><li><a href="https://www.itmedia.co.jp/news/article/1805/25/1180525055/">ITmedia：利用者行動改變的智慧自販機（2018/5/25）</a></li><li><a href="https://www.timeout.com/tokyo/news/japans-coca-cola-vending-machines-will-offer-a-subscription-service-from-april-032921">Time Out Tokyo：自販機訂閱上線（2021/3/29）</a></li><li><a href="https://pricey.jp/web/articles/4571">Pricey：可口可樂自販機漲價與 Pass 方案（比價網站，二手資料）</a></li><li><a href="https://store.hbr.org/product/coca-cola-s-new-vending-machine-a-pricing-to-capture-value-or-not/500068">HBS 個案：Coca-Cola's New Vending Machine (A)（500-068，2000/2）</a></li><li><a href="https://money.cnn.com/1999/10/27/companies/coke/">CNNfn：Coke price rises with heat（1999/10/27）</a></li><li><a href="https://www.coca-colacompany.com/media-center/next-generation-of-beverage-dispensing-faster-smarter-customized">Coca-Cola：新一代 Freestyle 與飲料機（2026/5/12）</a></li><li><a href="https://www.citedrive.com/en/discovery/self-service-technologies-understanding-customer-satisfaction-with-technology-based-service-encounters">Meuter et al.（2000），自助服務科技，Journal of Marketing 64(3)</a></li></ul>
+</main>
+<footer>CCBJH 為 Coca-Cola Bottlers Japan Holdings；金額皆為日圓，部分季度數字由累計值推算</footer></div>
+<script>
+(function(){var t=document.getElementById('toc');document.querySelectorAll('main h2').forEach(function(h){var a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent;t.appendChild(a)})})();
+</script>
+</body>
+</html>
